@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GaorSystem Perú | Soluciones Tecnológicas</title>
+    <meta name="description" content="Implementación de Odoo, Automatizaciones n8n y Desarrollo Web en Perú.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN para asegurar carga inmediata en Vercel) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Tailwind Personalizada -->
     <script>
       tailwind.config = {
         theme: {
@@ -16,11 +26,11 @@
                 200: '#d0bff5',
                 300: '#b094ee',
                 400: '#8e62e4',
-                500: '#753be0', // Violeta Base mejorado
+                500: '#753be0',
                 600: '#6426cd',
                 700: '#551db0',
-                800: '#461a8f', // Deep Purple para bordes
-                900: '#2b0f5e', // Fondo oscuro más elegante (menos saturado)
+                800: '#461a8f',
+                900: '#2b0f5e',
                 950: '#1b073e',
               },
               accent: {
@@ -28,15 +38,15 @@
                 100: '#cbfef0',
                 200: '#98fce0',
                 300: '#5df5cb',
-                400: '#24eeb6', // Turquesa Vibrante (Rocket Body)
-                500: '#0bd29e', // Botones Hover (más legible)
+                400: '#24eeb6',
+                500: '#0bd29e',
                 600: '#06aa81',
                 700: '#088869',
               },
             },
             fontFamily: {
-              sans: ['Sora', 'sans-serif'], // Títulos: Potente y Tecnológico
-              secondary: ['"Plus Jakarta Sans"', 'sans-serif'], // Cuerpo: Alegre y Legible
+              sans: ['Sora', 'sans-serif'],
+              secondary: ['"Plus Jakarta Sans"', 'sans-serif'],
             },
             animation: {
               blob: "blob 7s infinite",
@@ -73,40 +83,49 @@
         },
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS Globales manuales -->
     <style>
       body {
-        font-family: 'Plus Jakarta Sans', sans-serif; /* Default body font */
-        scroll-behavior: smooth;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f4f1fd; /* brand-50 */
+        color: #0f172a; /* slate-900 */
       }
       h1, h2, h3, h4, h5, h6 {
-        font-family: 'Sora', sans-serif; /* Headings font */
+        font-family: 'Sora', sans-serif;
       }
-      /* Hide scrollbar for Chrome, Safari and Opera */
+      
+      /* Ocultar Scrollbar pero permitir scroll */
       .no-scrollbar::-webkit-scrollbar {
           display: none;
       }
-      /* Hide scrollbar for IE, Edge and Firefox */
       .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* Máscara de gradiente para carrusel */
+      .mask-gradient {
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
-  }
-}
-</script>
-</head>
-  <body class="bg-brand-50 text-slate-900 antialiased selection:bg-accent-300 selection:text-brand-900">
+
+    <!-- Import Map para React -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="antialiased selection:bg-accent-300 selection:text-brand-900">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
   </body>
